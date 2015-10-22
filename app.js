@@ -1,7 +1,22 @@
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.6307151, lng: -111.9093215},
-    zoom: 11
-  });
-}
+var app = angular.module('app', ['ui.router']);
+
+app.config(function($stateProvider, $urlRouterProvider){
+	$urlRouterProvider.otherwise("inbox");
+
+	$stateProvider
+		.state('inbox',{
+			url: "/",
+			templateUrl: "inbox.html"
+		})
+		.state('message',{
+			url: "/message",
+			templateUrl: "message.html"
+		})
+});
+
+app.controller('mainCtrl', ['$scope', function($scope){
+
+
+
+}]);
+
